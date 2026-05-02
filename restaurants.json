@@ -1,0 +1,164 @@
+[
+  {
+    "name": "The Jay Cafe",
+    "city": "Houston",
+    "area": "Needville",
+    "address": "Needville, TX",
+    "mapUrl": "https://maps.google.com/?q=The+Jay+Cafe+Needville+TX",
+    "websiteUrl": "https://thejaycafe.com/",
+    "notes": ""
+  },
+  {
+    "name": "Flo Paris",
+    "city": "Houston",
+    "area": "Galleria",
+    "address": "5757 Westheimer Rd, Houston, TX",
+    "mapUrl": "https://maps.google.com/?q=5757+Westheimer+Rd+Houston+TX",
+    "websiteUrl": "https://www.floparisbakery.com/",
+    "notes": ""
+  },
+  {
+    "name": "Joyce’s Seafood & Steaks",
+    "city": "Houston",
+    "area": "",
+    "address": "6415 San Felipe St, Houston, TX",
+    "mapUrl": "https://maps.google.com/?q=6415+San+Felipe+St+Houston+TX",
+    "websiteUrl": "https://www.joycesseafood.com/",
+    "notes": ""
+  },
+  {
+    "name": "Cabo Bob’s Burritos",
+    "city": "Houston",
+    "area": "",
+    "address": "1810 Fountain View Dr, Houston, TX",
+    "mapUrl": "https://maps.google.com/?q=1810+Fountain+View+Dr+Houston+TX",
+    "websiteUrl": "https://cabobobs.com/",
+    "notes": ""
+  },
+  {
+    "name": "House of Pies",
+    "city": "Houston",
+    "area": "Westheimer",
+    "address": "6142 Westheimer Rd, Houston, TX",
+    "mapUrl": "https://maps.google.com/?q=6142+Westheimer+Rd+Houston+TX",
+    "websiteUrl": "https://houseofpies.com/",
+    "notes": ""
+  },
+  {
+    "name": "Chama Gaúcha Brazilian Steakhouse",
+    "city": "Houston",
+    "area": "",
+    "address": "5865 Westheimer Rd, Houston, TX",
+    "mapUrl": "https://maps.google.com/?q=5865+Westheimer+Rd+Houston+TX",
+    "websiteUrl": "https://chamagaucha.com/houston/",
+    "notes": ""
+  },
+  {
+    "name": "Nundini Chef’s Table",
+    "city": "Houston",
+    "area": "",
+    "address": "500 N Shepherd Dr, Houston, TX",
+    "mapUrl": "https://maps.google.com/?q=500+N+Shepherd+Dr+Houston+TX",
+    "websiteUrl": "https://nundini.com/",
+    "notes": ""
+  },
+  {
+    "name": "The Original Ninfa’s",
+    "city": "Houston",
+    "area": "Uptown / Post Oak",
+    "address": "1700 Post Oak Blvd, Unit 1, Houston, TX",
+    "mapUrl": "https://maps.google.com/?q=1700+Post+Oak+Blvd+Unit+1+Houston+TX",
+    "websiteUrl": "https://ninfas.com/",
+    "notes": ""
+  },
+  {
+    "name": "True Food Kitchen",
+    "city": "Houston",
+    "area": "Galleria",
+    "address": "Houston, TX",
+    "mapUrl": "https://maps.google.com/?q=True+Food+Kitchen+Galleria+Houston+TX",
+    "websiteUrl": "https://www.truefoodkitchen.com/locations/houston/",
+    "notes": ""
+  },
+  {
+    "name": "Emporio Brazilian Grill",
+    "city": "Houston",
+    "area": "",
+    "address": "12288 Westheimer Rd, Unit 210A, Houston, TX",
+    "mapUrl": "https://maps.google.com/?q=12288+Westheimer+Rd+Unit+210A+Houston+TX",
+    "websiteUrl": "https://emporioinc.com/",
+    "notes": ""
+  },
+  {
+    "name": "Epicure Café",
+    "city": "Houston",
+    "area": "",
+    "address": "2005 W Gray St, Houston, TX",
+    "mapUrl": "https://maps.google.com/?q=2005+W+Gray+St+Houston+TX",
+    "websiteUrl": "https://epicure-cafe.com/",
+    "notes": ""
+  },
+  {
+    "name": "Bouchée Patisserie",
+    "city": "Houston",
+    "area": "Post Oak Hotel",
+    "address": "1600 IH-610 Frontage Rd, Houston, TX",
+    "mapUrl": "https://maps.google.com/?q=Bouchée+Patisserie+1600+IH-610+Frontage+Rd+Houston+TX",
+    "websiteUrl": "https://thepostoakhotel.com/dining/bouchee-patisserie/",
+    "notes": ""
+  },
+  {
+    "name": "Grand Lux Cafe",
+    "city": "Houston",
+    "area": "Galleria",
+    "address": "5000 Westheimer Rd, Houston, TX",
+    "mapUrl": "https://maps.google.com/?q=5000+Westheimer+Rd+Houston+TX",
+    "websiteUrl": "https://locations.grandluxcafe.com/",
+    "notes": ""
+  },
+  {
+    "name": "La Madeleine",
+    "city": "Houston",
+    "area": "San Felipe",
+    "address": "5885 San Felipe St, Ste 100, Houston, TX",
+    "mapUrl": "https://maps.google.com/?q=5885+San+Felipe+St+Ste+100+Houston+TX",
+    "websiteUrl": "https://lamadeleine.com/",
+    "notes": ""
+  },
+  {
+    "name": "The Brisket House",
+    "city": "Houston",
+    "area": "Woodway",
+    "address": "5775 Woodway Dr, Houston, TX",
+    "mapUrl": "https://maps.google.com/?q=5775+Woodway+Dr+Houston+TX",
+    "websiteUrl": "https://thebriskethouse.com/",
+    "notes": ""
+  },
+  {
+    "name": "Huynh Restaurant",
+    "city": "Houston",
+    "area": "EaDo",
+    "address": "912 St Emanuel St, Houston, TX 77003",
+    "mapUrl": "https://maps.app.goo.gl/a6r2JHTFSVjqDASP9?g_st=ic",
+    "websiteUrl": "http://huynhrestauranthouston.com/",
+    "notes": ""
+  },
+  {
+    "name": "Treebeards",
+    "city": "Houston",
+    "area": "Memorial City",
+    "address": "9655 Katy Fwy, Suite 3120, Houston, TX 77024",
+    "mapUrl": "https://maps.google.com/?q=9655+Katy+Fwy+Suite+3120+Houston+TX+77024",
+    "websiteUrl": "https://treebeards.com/",
+    "notes": ""
+  },
+  {
+    "name": "Cleburne Cafeteria",
+    "city": "Houston",
+    "area": "",
+    "address": "3606 Bissonnet St, Houston, TX 77005",
+    "mapUrl": "https://maps.google.com/?q=3606+Bissonnet+St+Houston+TX+77005",
+    "websiteUrl": "https://cleburnecafeteria.com/",
+    "notes": ""
+  }
+]
