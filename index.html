@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Favorite Restaurants</title>
+  <style>
+    body { font-family: system-ui, sans-serif; margin: 2rem; line-height: 1.4; }
+    h1 { margin-bottom: 0.25rem; }
+    .controls { margin: 1.5rem 0; display: flex; gap: 1rem; flex-wrap: wrap; }
+    input, select { padding: 0.5rem; font-size: 1rem; }
+    table { border-collapse: collapse; width: 100%; }
+    th, td { border-bottom: 1px solid #ddd; padding: 0.75rem; text-align: left; }
+    th { background: #f6f6f6; }
+    a { color: #0645ad; }
+  </style>
+</head>
+<body>
+  <h1>Favorite Restaurants</h1>
+  <p>A personal quick-reference list for restaurants and cafés.</p>
+
+  <div class="controls">
+    <label>
+      City:
+      <select id="cityFilter">
+        <option value="All">All</option>
+      </select>
+    </label>
+
+    <label>
+      Search:
+      <input id="searchBox" type="search" placeholder="Search name, area, address..." />
+    </label>
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Restaurant</th>
+        <th>City</th>
+        <th>Area</th>
+        <th>Address / Directions</th>
+        <th>Website / Menu</th>
+        <th>Notes</th>
+      </tr>
+    </thead>
+    <tbody id="restaurantTable"></tbody>
+  </table>
+
+  <script>
+    let restaurants = [];
+
+    async function loadRestaurants() {
+      const response = await fetch("restaurants.json");
+      restaurants = await response.json();
+      buildCityFilter();
+      renderTable();
+    }
+
+    function buildCityFilter() {
+      const cityFilter = document.getElementById("cityFilter");
+      const cities = [...new Set(restaurants.map(r => r.city).filter(Boolean))].sort();
+
+      cities.forEach(city => {
+        const option = document.createElement("option");
+        option.value = city;
+        option.textContent = city;
+        cityFilter.appendChild(option);
+      });
+    }
+
+    function renderTable() {
+      const city = document.getElementById("cityFilter").value;
+      const search = document.getElementById("searchBox").value.toLowerCase();
+      const tbody = document.getElementById("restaurantTable");
+      tbody.innerHTML = "";
+
+      restaurants
+        .filter(r => city === "All" || r.city === city)
+        .filter(r => {
+          const text = `${r.name} ${r.city} ${r.area} ${r.address} ${r.notes}`.toLowerCase();
+          return text.includes(search);
+        })
+        .forEach((r, index) => {
+          const row = document.createElement("tr");
+
+          row.innerHTML = `
+            <td>${index + 1}</td>
+            <td><strong>${r.name}</strong></td>
+            <td>${r.city || ""}</td>
+            <td>${r.area || ""}</td>
+            <td><a href="${r.mapUrl}" target="_blank" rel="noopener">${r.address || "Map"}</a></td>
+            <td>${r.websiteUrl ? `<a href="${r.websiteUrl}" target="_blank" rel="noopener">Website</a>` : ""}</td>
+            <td>${r.notes || ""}</td>
+          `;
+
+          tbody.appendChild(row);
+        });
+    }
+
+    document.getElementById("cityFilter").addEventListener("change", renderTable);
+    document.getElementById("searchBox").addEventListener("input", renderTable);
+
+    loadRestaurants();
+  </script>
+</body>
+</html>
