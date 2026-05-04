@@ -1,109 +1,306 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Favorite Restaurants</title>
-  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+
+  <link rel="icon" href="favicon.ico">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
   <style>
-    body { font-family: system-ui, sans-serif; margin: 2rem; line-height: 1.4; }
-    h1 { margin-bottom: 0.25rem; }
-    .controls { margin: 1.5rem 0; display: flex; gap: 1rem; flex-wrap: wrap; }
-    input, select { padding: 0.5rem; font-size: 1rem; }
-    table { border-collapse: collapse; width: 100%; }
-    th, td { border-bottom: 1px solid #ddd; padding: 0.75rem; text-align: left; }
-    th { background: #f6f6f6; }
-    a { color: #0645ad; }
+    :root {
+      --bg: #f7f7f5;
+      --card: #ffffff;
+      --text: #1f2933;
+      --muted: #667085;
+      --line: #e5e7eb;
+      --accent: #0f766e;
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+    }
+
+    main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 28px 18px 48px;
+    }
+
+    header {
+      margin-bottom: 22px;
+    }
+
+    h1 {
+      margin: 0 0 8px;
+      font-size: clamp(2rem, 4vw, 3rem);
+      letter-spacing: -0.04em;
+    }
+
+    .subtitle,
+    .status,
+    .count,
+    .muted {
+      color: var(--muted);
+    }
+
+    .subtitle {
+      margin: 0;
+      font-size: 1rem;
+    }
+
+    .status {
+      margin-top: 8px;
+      font-size: 0.85rem;
+    }
+
+    .controls {
+      display: grid;
+      grid-template-columns: minmax(180px, 260px) 1fr;
+      gap: 12px;
+      margin: 24px 0;
+    }
+
+    select,
+    input {
+      font: inherit;
+      padding: 11px 12px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: var(--card);
+      color: var(--text);
+    }
+
+    .table-wrap {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.04);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    th,
+    td {
+      text-align: left;
+      padding: 14px 16px;
+      border-bottom: 1px solid var(--line);
+      vertical-align: top;
+    }
+
+    th {
+      font-size: 0.82rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      background: #fafafa;
+    }
+
+    tr:last-child td {
+      border-bottom: 0;
+    }
+
+    a {
+      color: var(--accent);
+      font-weight: 650;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .count {
+      margin: 12px 2px 0;
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 760px) {
+      .controls {
+        grid-template-columns: 1fr;
+      }
+
+      table,
+      thead,
+      tbody,
+      th,
+      td,
+      tr {
+        display: block;
+      }
+
+      thead {
+        display: none;
+      }
+
+      tr {
+        padding: 12px 0;
+        border-bottom: 1px solid var(--line);
+      }
+
+      tr:last-child {
+        border-bottom: 0;
+      }
+
+      td {
+        border-bottom: 0;
+        padding: 6px 16px;
+      }
+
+      td::before {
+        content: attr(data-label);
+        display: block;
+        color: var(--muted);
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        margin-bottom: 2px;
+      }
+    }
   </style>
 </head>
 <body>
-  <h1>Favorite Restaurants</h1>
-  <p>A personal quick-reference list for restaurants and cafés.</p>
+  <main>
+    <header>
+      <h1>Favorite Restaurants</h1>
+      <p class="subtitle">A personal quick-reference list with map and website links.</p>
+      <p class="status" id="status">Loading restaurants...</p>
+    </header>
 
-  <div class="controls">
-    <label>
-      City:
-      <select id="cityFilter">
-        <option value="All">All</option>
+    <section class="controls" aria-label="Filters">
+      <select id="cityFilter" aria-label="Filter by city">
+        <option value="All">All cities</option>
       </select>
-    </label>
+      <input id="searchBox" type="search" placeholder="Search name, area, address, or notes..." aria-label="Search restaurants">
+    </section>
 
-    <label>
-      Search:
-      <input id="searchBox" type="search" placeholder="Search name, area, address..." />
-    </label>
-  </div>
+    <section class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>City</th>
+            <th>Area</th>
+            <th>Address</th>
+            <th>Website</th>
+            <th>Notes</th>
+          </tr>
+        </thead>
+        <tbody id="restaurantRows"></tbody>
+      </table>
+    </section>
 
-  <table>
-    <thead>
-      <tr>
-        <th>#</th>
-        <th>Restaurant</th>
-        <th>City</th>
-        <th>Area</th>
-        <th>Address / Directions</th>
-        <th>Website / Menu</th>
-        <th>Notes</th>
-      </tr>
-    </thead>
-    <tbody id="restaurantTable"></tbody>
-  </table>
+    <p class="count" id="count"></p>
+  </main>
 
   <script>
+    const cityFilter = document.getElementById("cityFilter");
+    const searchBox = document.getElementById("searchBox");
+    const rows = document.getElementById("restaurantRows");
+    const count = document.getElementById("count");
+    const status = document.getElementById("status");
+
     let restaurants = [];
 
-    async function loadRestaurants() {
-      const response = await fetch("restaurants.json");
-      restaurants = await response.json();
-      buildCityFilter();
-      renderTable();
+    function escapeHtml(value) {
+      return String(value ?? "")
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll('"', "&quot;")
+        .replaceAll("'", "&#039;");
     }
 
-    function buildCityFilter() {
-      const cityFilter = document.getElementById("cityFilter");
-      const cities = [...new Set(restaurants.map(r => r.city).filter(Boolean))].sort();
+    function renderCityOptions() {
+      const selectedCity = cityFilter.value;
+      const cities = [...new Set(restaurants.map(item => item.city).filter(Boolean))].sort();
 
-      cities.forEach(city => {
+      cityFilter.innerHTML = '<option value="All">All cities</option>';
+
+      for (const city of cities) {
         const option = document.createElement("option");
         option.value = city;
         option.textContent = city;
         cityFilter.appendChild(option);
+      }
+
+      if ([...cityFilter.options].some(option => option.value === selectedCity)) {
+        cityFilter.value = selectedCity;
+      }
+    }
+
+    function restaurantMatches(item) {
+      const selectedCity = cityFilter.value;
+      const searchText = searchBox.value.trim().toLowerCase();
+
+      const cityMatches = selectedCity === "All" || item.city === selectedCity;
+      const searchable = [
+        item.name,
+        item.city,
+        item.area,
+        item.address,
+        item.notes
+      ].join(" ").toLowerCase();
+
+      return cityMatches && searchable.includes(searchText);
+    }
+
+    function renderRows() {
+      const filtered = restaurants.filter(restaurantMatches);
+
+      rows.innerHTML = filtered.map(item => `
+        <tr>
+          <td data-label="Name">${item.websiteUrl ? `<a href="${escapeHtml(item.websiteUrl)}" target="_blank" rel="noopener">${escapeHtml(item.name)}</a>` : escapeHtml(item.name)}</td>
+          <td data-label="City">${escapeHtml(item.city)}</td>
+          <td data-label="Area">${escapeHtml(item.area || "")}</td>
+          <td data-label="Address">${item.mapUrl ? `<a href="${escapeHtml(item.mapUrl)}" target="_blank" rel="noopener">${escapeHtml(item.address || "Map")}</a>` : escapeHtml(item.address || "")}</td>
+          <td data-label="Website">${item.websiteUrl ? `<a href="${escapeHtml(item.websiteUrl)}" target="_blank" rel="noopener">Website</a>` : ""}</td>
+          <td data-label="Notes" class="muted">${escapeHtml(item.notes || "")}</td>
+        </tr>
+      `).join("");
+
+      count.textContent = `${filtered.length} restaurant${filtered.length === 1 ? "" : "s"} shown`;
+    }
+
+    async function loadRestaurants() {
+      const cacheBuster = new Date().getTime();
+      const response = await fetch(`restaurants.json?v=${cacheBuster}`, {
+        cache: "no-store"
       });
+
+      if (!response.ok) {
+        throw new Error(`Could not load restaurants.json. HTTP ${response.status}`);
+      }
+
+      restaurants = await response.json();
+
+      restaurants.sort((a, b) => {
+        return (a.city || "").localeCompare(b.city || "") ||
+               (a.name || "").localeCompare(b.name || "");
+      });
+
+      renderCityOptions();
+      renderRows();
+
+      status.textContent = `Loaded ${restaurants.length} restaurants. Last refreshed: ${new Date().toLocaleString()}`;
     }
 
-    function renderTable() {
-      const city = document.getElementById("cityFilter").value;
-      const search = document.getElementById("searchBox").value.toLowerCase();
-      const tbody = document.getElementById("restaurantTable");
-      tbody.innerHTML = "";
+    cityFilter.addEventListener("change", renderRows);
+    searchBox.addEventListener("input", renderRows);
 
-      restaurants
-        .filter(r => city === "All" || r.city === city)
-        .filter(r => {
-          const text = `${r.name} ${r.city} ${r.area} ${r.address} ${r.notes}`.toLowerCase();
-          return text.includes(search);
-        })
-        .forEach((r, index) => {
-          const row = document.createElement("tr");
-
-          row.innerHTML = `
-            <td>${index + 1}</td>
-            <td><strong>${r.name}</strong></td>
-            <td>${r.city || ""}</td>
-            <td>${r.area || ""}</td>
-            <td><a href="${r.mapUrl}" target="_blank" rel="noopener">${r.address || "Map"}</a></td>
-            <td>${r.websiteUrl ? `<a href="${r.websiteUrl}" target="_blank" rel="noopener">Website</a>` : ""}</td>
-            <td>${r.notes || ""}</td>
-          `;
-
-          tbody.appendChild(row);
-        });
-    }
-
-    document.getElementById("cityFilter").addEventListener("change", renderTable);
-    document.getElementById("searchBox").addEventListener("input", renderTable);
-
-    loadRestaurants();
+    loadRestaurants().catch(error => {
+      rows.innerHTML = `<tr><td colspan="6">Could not load restaurants.json</td></tr>`;
+      status.textContent = "Could not load restaurants.json.";
+      console.error(error);
+    });
   </script>
 </body>
 </html>
