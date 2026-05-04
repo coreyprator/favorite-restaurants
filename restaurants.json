@@ -169,5 +169,14 @@
     "mapUrl": "https://maps.google.com/?q=Pollo+Bravo+Houston+TX",
     "websiteUrl": "https://elpollobravo.com/",
     "notes": ""
+  },
+  {
+    "name": "Café Ginger",
+    "city": "Houston",
+    "area": "",
+    "address": "Houston, TX",
+    "mapUrl": "https://maps.google.com/?q=Cafe+Ginger+Houston+TX",
+    "websiteUrl": "https://www.cafeginger.net/",
+    "notes": ""
   }
 ]
