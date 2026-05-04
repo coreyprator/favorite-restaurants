@@ -67,7 +67,7 @@
     "city": "Houston",
     "area": "Uptown / Post Oak",
     "address": "1700 Post Oak Blvd, Unit 1, Houston, TX",
-    "mapUrl": "https://maps.google.com/?q=1700+Post+Oak+Blvd+Unit+1+Houston+TX",
+    "mapUrl": "https://maps.google.com/?q=1700+Post+Oak+Blvd+Houston+TX",
     "websiteUrl": "https://ninfas.com/",
     "notes": ""
   },
@@ -76,7 +76,7 @@
     "city": "Houston",
     "area": "Galleria",
     "address": "Houston, TX",
-    "mapUrl": "https://maps.google.com/?q=True+Food+Kitchen+Galleria+Houston+TX",
+    "mapUrl": "https://maps.google.com/?q=True+Food+Kitchen+Houston+TX",
     "websiteUrl": "https://www.truefoodkitchen.com/locations/houston/",
     "notes": ""
   },
@@ -85,7 +85,7 @@
     "city": "Houston",
     "area": "",
     "address": "12288 Westheimer Rd, Unit 210A, Houston, TX",
-    "mapUrl": "https://maps.google.com/?q=12288+Westheimer+Rd+Unit+210A+Houston+TX",
+    "mapUrl": "https://maps.google.com/?q=12288+Westheimer+Rd+Houston+TX",
     "websiteUrl": "https://emporioinc.com/",
     "notes": ""
   },
@@ -103,7 +103,7 @@
     "city": "Houston",
     "area": "Post Oak Hotel",
     "address": "1600 IH-610 Frontage Rd, Houston, TX",
-    "mapUrl": "https://maps.google.com/?q=Bouchée+Patisserie+1600+IH-610+Frontage+Rd+Houston+TX",
+    "mapUrl": "https://maps.google.com/?q=Bouchee+Patisserie+Houston+TX",
     "websiteUrl": "https://thepostoakhotel.com/dining/bouchee-patisserie/",
     "notes": ""
   },
@@ -120,8 +120,8 @@
     "name": "La Madeleine",
     "city": "Houston",
     "area": "San Felipe",
-    "address": "5885 San Felipe St, Ste 100, Houston, TX",
-    "mapUrl": "https://maps.google.com/?q=5885+San+Felipe+St+Ste+100+Houston+TX",
+    "address": "5885 San Felipe St, Houston, TX",
+    "mapUrl": "https://maps.google.com/?q=5885+San+Felipe+St+Houston+TX",
     "websiteUrl": "https://lamadeleine.com/",
     "notes": ""
   },
@@ -138,7 +138,7 @@
     "name": "Huynh Restaurant",
     "city": "Houston",
     "area": "EaDo",
-    "address": "912 St Emanuel St, Houston, TX 77003",
+    "address": "912 St Emanuel St, Houston, TX",
     "mapUrl": "https://maps.app.goo.gl/a6r2JHTFSVjqDASP9?g_st=ic",
     "websiteUrl": "http://huynhrestauranthouston.com/",
     "notes": ""
@@ -147,8 +147,8 @@
     "name": "Treebeards",
     "city": "Houston",
     "area": "Memorial City",
-    "address": "9655 Katy Fwy, Suite 3120, Houston, TX 77024",
-    "mapUrl": "https://maps.google.com/?q=9655+Katy+Fwy+Suite+3120+Houston+TX+77024",
+    "address": "9655 Katy Fwy, Houston, TX",
+    "mapUrl": "https://maps.google.com/?q=9655+Katy+Fwy+Houston+TX",
     "websiteUrl": "https://treebeards.com/",
     "notes": ""
   },
@@ -156,9 +156,18 @@
     "name": "Cleburne Cafeteria",
     "city": "Houston",
     "area": "",
-    "address": "3606 Bissonnet St, Houston, TX 77005",
-    "mapUrl": "https://maps.google.com/?q=3606+Bissonnet+St+Houston+TX+77005",
+    "address": "3606 Bissonnet St, Houston, TX",
+    "mapUrl": "https://maps.google.com/?q=3606+Bissonnet+St+Houston+TX",
     "websiteUrl": "https://cleburnecafeteria.com/",
+    "notes": ""
+  },
+  {
+    "name": "Pollo Bravo",
+    "city": "Houston",
+    "area": "",
+    "address": "Houston, TX",
+    "mapUrl": "https://maps.google.com/?q=Pollo+Bravo+Houston+TX",
+    "websiteUrl": "https://elpollobravo.com/",
     "notes": ""
   }
 ]
