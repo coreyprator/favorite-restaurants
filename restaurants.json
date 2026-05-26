@@ -196,5 +196,14 @@
     "mapUrl": "https://goo.gl/maps/usarestaurants",
     "websiteUrl": "https://www.saltgrass.com/location/saltgrass-houston-katy-freeway/",
     "notes": "Monday-Thursday: 11 AM–9 PM; Fri-Sat 11 AM–10 PM; Sun 11 AM–9 PM"
+  },
+  {
+    "name": "Josephine's Gulf Coast Tradition",
+    "city": "Houston",
+    "area": "Downtown",
+    "address": "318 Gray Street, Houston, TX 77002",
+    "mapUrl": "https://goo.gl/maps/tZB2uhaZafmWcmbw8",
+    "websiteUrl": "https://josephinesgulfcoasttradition.com/",
+    "notes": "Mon-Thu 11:00 am–3:00 pm / 5:00 pm–10:00 pm; Fri: 11 am–3 pm / 5 pm–11 pm; Sat: 11 am–11 pm; Sun: 11 am–10 pm"
   }
 ]
