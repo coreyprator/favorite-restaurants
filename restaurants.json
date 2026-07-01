@@ -205,5 +205,41 @@
     "mapUrl": "https://goo.gl/maps/tZB2uhaZafmWcmbw8",
     "websiteUrl": "https://josephinesgulfcoasttradition.com/",
     "notes": "Mon-Thu 11:00 am–3:00 pm / 5:00 pm–10:00 pm; Fri: 11 am–3 pm / 5 pm–11 pm; Sat: 11 am–11 pm; Sun: 11 am–10 pm"
+  },
+  {
+    "name": "Bistrot Leo",
+    "city": "Paris",
+    "area": "2nd arrondissement",
+    "address": "129 Bd de Sébastopol, 75002 Paris",
+    "mapUrl": "https://maps.google.com/?q=129+Bd+de+S%C3%A9bastopol+75002+Paris",
+    "websiteUrl": "https://bistrot-leo.eatbu.com/",
+    "notes": "Rating 3.9 (371 reviews). Dine-in available; no delivery. Open until 1 am. €10–30 per person."
+  },
+  {
+    "name": "La Reine du Kashmir",
+    "city": "Paris",
+    "area": "10th arrondissement",
+    "address": "80 Pass. Brady, 75010 Paris",
+    "mapUrl": "https://maps.google.com/?q=80+Passage+Brady+75010+Paris",
+    "websiteUrl": "https://lareinedukashmir.com/",
+    "notes": "Indian restaurant. Rating 4.7 (1,377 reviews). €10–20 per person. Dine-in, takeaway, delivery. Tel: 01 45 23 39 35"
+  },
+  {
+    "name": "L'Orient d'Or",
+    "city": "Paris",
+    "area": "9th arrondissement",
+    "address": "22 Rue de Trévise, 75009 Paris",
+    "mapUrl": "https://maps.google.com/?q=22+Rue+de+Tr%C3%A9vise+75009+Paris",
+    "websiteUrl": "https://lorientdor.fr/",
+    "notes": "Chinese restaurant. Rating 4.7 (863 reviews). €20–30 per person. Regional fare from across China, including spicy Hunan dishes. Dine-in, takeaway, delivery. Tel: 01 48 00 07 73"
+  },
+  {
+    "name": "L'Echevin (Bobun)",
+    "city": "Paris",
+    "area": "9th arrondissement",
+    "address": "24 Rue de Trévise, 75009 Paris",
+    "mapUrl": "https://maps.google.com/?q=24+Rue+de+Tr%C3%A9vise+75009+Paris",
+    "websiteUrl": "https://lechevin.eatbu.com/",
+    "notes": "Rating 3.9 (82 reviews). €10–20 per person. Dine-in, takeaway. Tel: 01 48 00 07 20"
   }
 ]
