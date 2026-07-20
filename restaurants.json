@@ -250,5 +250,14 @@
     "mapUrl": "https://maps.google.com/?q=24+Rue+de+Tr%C3%A9vise+75009+Paris",
     "websiteUrl": "https://lechevin.eatbu.com/",
     "notes": "Rating 3.9 (82 reviews). €10–20 per person. Dine-in, takeaway. Tel: 01 48 00 07 20"
+  },
+  {
+    "name": "Le Corail",
+    "city": "Paris",
+    "area": "9th arrondissement",
+    "address": "79 Rue La Fayette, 75009 Paris, France",
+    "mapUrl": "https://maps.google.com/?q=79+Rue+La+Fayette+75009+Paris+France",
+    "websiteUrl": "",
+    "notes": ""
   }
 ]
